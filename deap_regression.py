@@ -13,6 +13,11 @@
 #    You should have received a copy of the GNU Lesser General Public
 #    License along with EAP. If not, see <http://www.gnu.org/licenses/>.
 
+# This is slightly modified (mostly through the addition of comments)
+# copy of the symbolic regression example from the DEAP repository:
+# https://github.com/DEAP/deap/blob/master/examples/gp/symbreg.py
+# Nic McPhee, March 2025
+
 import operator
 import math
 import random
