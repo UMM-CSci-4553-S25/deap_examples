@@ -13,10 +13,11 @@
 #    You should have received a copy of the GNU Lesser General Public
 #    License along with EAP. If not, see <http://www.gnu.org/licenses/>.
 
-# This is slightly modified (mostly through the addition of comments)
-# copy of the symbolic regression example from the DEAP repository:
-# https://github.com/DEAP/deap/blob/master/examples/gp/symbreg.py
-# Nic McPhee, March 2025
+# This is an implementation of the "complex regression" problem from the
+# Propeller implementation of PushGP:
+# https://github.com/lspector/propeller/blob/71d378f49fdf88c14dda88387291c9c7be0f1277/src/propeller/problems/complex_regression.cljc
+#
+# This has the target function of (x^3 + 1)^3 + 1 = x^9 + 3x^6 + 3x^3 + 2.
 
 import operator
 import math
