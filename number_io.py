@@ -140,7 +140,7 @@ def evalSymbReg(individual, points):
     # Transform the tree expression in a callable function
     func = toolbox.compile(expr=individual)
     # Evaluate the mean squared error between the expression
-    # and the real function : x^9 + 3x^6 + 3x^3 + 2
+    # and the real function : float(i) + x
     # `sqerrors` is the square of all the errors.
     sqerrors = ((func(i, x) - (float(i) + x))**2 for (i, x) in points)
 
@@ -148,7 +148,7 @@ def evalSymbReg(individual, points):
     # i.e., the MSE.
     return math.fsum(sqerrors) / len(points),
 
-training_inputs = [(random.randint(-100, 100), random.random()) for index in range(0, 40)]
+training_inputs = [(random.randint(-100, 100), 200 * random.random() - 100) for index in range(0, 40)]
 
 print(training_inputs)
 
@@ -181,9 +181,9 @@ toolbox.decorate("mutate", gp.staticLimit(key=operator.attrgetter("height"), max
 def main():
     # random.seed(318)
 
-    # Sets the population size to 30.
+    # Sets the population size to 300.
     # (This problem is stupid easy, so we can get away with very small population sizes.)
-    pop = toolbox.population(n=30)
+    pop = toolbox.population(n=100)
     # Tracks the single best individual over the entire run.
     hof = tools.HallOfFame(1)
 
